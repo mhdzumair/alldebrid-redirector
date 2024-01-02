@@ -17,7 +17,7 @@ headers = {
 async def unlock_link(agent: str, apikey: str, link: str, response: Response):
     response.headers.update(headers)
 
-    data = requests.get(f"https://api.alldebrid.com/v4/link/unlock?agent={agent}&apikey={apikey}&link={link}").json()
+    data = requests.get(f"https://api.alldebrid.com/v4/link/unlock?agent=torrentio&apikey={apikey}&link={link}").json()
     if data.get("status") == "success":
         video_url = data["data"]["link"]
     else:
