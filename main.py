@@ -21,6 +21,7 @@ async def unlock_link(agent: str, apikey: str, link: str, response: Response):
     if data.get("status") == "success":
         video_url = data["data"]["link"]
     else:
+        print(data)
         video_url = "https://882b9915d0fe-mediafusion.baby-beamup.club/static/exceptions/api_error.mp4"
 
     return RedirectResponse(url=video_url, headers=response.headers)
